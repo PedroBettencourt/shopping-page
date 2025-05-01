@@ -1,0 +1,38 @@
+@import "/home/pedro/repos/shopping-page/src/index.css";
+
+.bar {
+    background-color: var(--color-nav);
+    display: flex;
+    gap: 70px;
+    margin: 0;
+    padding: 20px 50px;
+    align-items: center;
+    font-weight: bold;
+}
+
+.bar * {
+    text-decoration: none;
+}
+
+.bar *:visited {
+    color: black;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.items {
+    display: flex;
+    gap: 30px;
+}
+
+.items>*:hover {
+    text-decoration: underline;
+    text-underline-offset: 10px;
+}
+
+.bag {
+    margin-left: auto;
+}

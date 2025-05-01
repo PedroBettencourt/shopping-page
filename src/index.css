@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url('./assets/Nunito-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --color-background: #FFF5E4;
+    --color-nav: #FFE3E1;
+    --color-2: #FFD1D1;
+    --color-3: #FF9494;
+}
+
+body {
+    margin: 0;
+    font-family: 'Nunito', serif, sans-serif;
+    background-color: var(--color-background);
+}
