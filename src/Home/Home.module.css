@@ -16,13 +16,13 @@
     font-weight: bold;
     border: 1px solid gray;
     border-radius: 10px;
-    background-color: var(--color-nav);
+    background-color: var(--color-2);
     cursor: pointer;
     transition: background-color 0.2s; 
 }
 .button:hover,
 .button:focus {
-    background-color: var(--color-2);
+    background-color: var(--color-3);
 }
 
 .flower {

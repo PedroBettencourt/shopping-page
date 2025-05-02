@@ -20,6 +20,7 @@ function Shop() {
                         <Link key={item.id} to={item.id} className={card} >
                             <img src={item.img} alt={item.name} />
                             <div className={link}>{item.name}</div>
+                            <div className={link}>{item.price}</div>
                         </Link>
                     )}
                 </ul>

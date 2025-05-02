@@ -8,21 +8,20 @@ function Navbar() {
     const [bag, setBag] = useState([]);
 
     // Shop items
-    const [food, setFood] = useState([{id: 5020364010151, name:""}, {id: 5018374285577, name: ""}]);
+    const [food, setFood] = useState([{id: 5018374285577, name: "", price: ""}]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    // const foodIds = [5020364010151, 5018374285577, 5010044002552, 3228857000166, 
-    //                 3760049791006, 7311070032611, 3228857002245, 5010044002378];
-
-    const foodIds = [5020364010151, 5018374285577,];
+    const foodIds = [{id: "5020364010151", price: "€1.30"}, {id: "5018374285577", price: "€0.80"}, {id: "5010044002552", price: "€1.50"}, 
+                     {id: "3228857000166", price: "€1.35"}, {id: "5010044002378", price: "€1.10"}, {id: "7311070032611", price: "€0.95"}, 
+                     {id: "3495566827654", price: "€1.70"}, {id: "3760049791006", price: "€1.15"}, {id: "5099077004238", price: "€0.65"}];
     
     useEffect(() => {
         const fetchData = async() => {
             const items = [];
             try {
                 for (const item of foodIds) {
-                    const response = await fetch(`https://world.openfoodfacts.net/api/v2/product/${item}`);
+                    const response = await fetch(`https://world.openfoodfacts.net/api/v2/product/${item.id}`);
     
                     if (!response.ok) throw new Error(`HTTP Error: Status ${response.status}`);
     
@@ -31,7 +30,7 @@ function Navbar() {
                     const name = data.product.product_name_en;
                     const img = data.product.image_url;
                     
-                    items.push({id: item.toString(), name: name, img: img});
+                    items.push({id: item.id, name: name, img: img, price: item.price});
                 }
                 setFood(items);
 

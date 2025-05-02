@@ -6,15 +6,19 @@ import { productClass, loadingClass, errorClass } from "./Product.module.css";
 function Product() {
 
     const data = useOutletContext();
-    const [bag, setBag, food, loading, error] = data;
+    const [bag, setBag, food, error, loading] = data;
 
     // CHECK IF ITEM PARAM ACTUALLY EXISTS _> SEND STATE WITH THE PRODUCTS
 
     // Get product information
     let {product} = useParams();
     product = food.find( item => item.id.toString() === product);
-    const productName = product.name;
-    const productImg = product.img;
+    let productName, productImg, productPrice;
+    if (product) {
+        productName = product.name;
+        productImg = product.img;
+        productPrice = product.price;
+    }
 
     const [quantity, setQuantity] = useState(1);
 
@@ -38,7 +42,7 @@ function Product() {
             setBag(newBag);
 
         } else {
-            setBag([...bag, {id: product, quantity: quantity}])
+            setBag([...bag, {product: product, quantity: quantity}])
         }       
     }
 
@@ -50,9 +54,9 @@ function Product() {
                 : (error)
                 ? <div className={errorClass}>{error}</div>
                 : <div className={productClass}>
-                    <h1>{productName}</h1>
                     <img src={productImg} alt={productName} />
-                    <h2>Price..</h2>
+                    <h1>{productName}</h1>
+                    <h2>{productPrice}</h2>
                     <form>
                         <label htmlFor="quantity">Quantity</label>
                         <input type="number" name="quantity" id="quantity" onChange={handleChange} value={quantity} />
