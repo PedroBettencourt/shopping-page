@@ -14,7 +14,14 @@
 }
 
 body {
+    overflow: visible;
     margin: 0;
     font-family: 'Nunito', serif, sans-serif;
     background-color: var(--color-background);
+    height: 100%;
+}
+
+#root {
+    height: 100vh;
+    overflow: visible;
 }

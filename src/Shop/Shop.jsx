@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { loadingClass, errorClass } from "./Shop.module.css";
+import { title, loadingClass, errorClass, cards, card, link } from "./Shop.module.css";
 
 function Shop() {
 
@@ -11,8 +11,6 @@ function Shop() {
     const foodIds = [5020364010151, 5018374285577, 5010044002552, 3228857000166, 
                     3760049791006, 7311070032611, 3228857002245, 5010044002378];
     
-    //const foodIds = [5020364010151, 5018374285577];
-
     useEffect(() => {
         const fetchData = async() => {
             const items = [];
@@ -39,28 +37,22 @@ function Shop() {
             }
         };
 
-        // let promises = [];
-        // for (let item of foodIds) {
-        //     promises.push(fetch(`https://world.openfoodfacts.net/api/v2/product/${item}`));
-        // }
-        // Promise.all(promises).then(result => console.log(result))
-
-
         fetchData();
         
     }, []) 
 
     return(
-        <div className="shop">
-            <h1>Shop</h1>
+        <div>
+            <h1 className={title}>Items ({food.length})</h1>
             {loading && (<div className={loadingClass}>Loading post</div>)}
             {error && (<div className={errorClass}>{error}</div>)}
-            <ul>
+            <ul className={cards}>
                 {food.map((item) => 
-                    <li key={item.id}>
-                        <Link to={item.name}>{item.name}</Link>
-                        <img src={item.img} alt={item.name} />
-                    </li>)}
+                        <Link key={item.id} to={item.name} className={card}>
+                            <img src={item.img} alt={item.name} />
+                            <div className={link}>{item.name}</div>
+                        </Link>
+)}
             </ul>
         </div>
     )
