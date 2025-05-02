@@ -2,10 +2,12 @@
 
 .loadingClass {
     margin-left: 60px;
+    font-size: 1.5em;
 }
 
 .errorClass {
     margin-left: 60px;
+    font-size: 1.5em;
 }
 
 .title {
@@ -16,7 +18,8 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 30px;
-    margin: 20px;
+    padding: 50px;
+    padding-top: 0;
 }
 
 .card {

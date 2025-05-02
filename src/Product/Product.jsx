@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 
-function Product({ bag, setBag }) {
+function Product({ food, bag, setBag }) {
+
+
+    // CHECK IF ITEM PARAM ACTUALLY EXISTS _> SEND STATE WITH THE PRODUCTS
 
     const {product} = useParams();
     const [quantity, setQuantity] = useState(1);

@@ -1,16 +1,15 @@
 @import "/home/pedro/repos/shopping-page/src/index.css";
 
+
 .bar {
     position: sticky;
     top: 0;
     background-color: var(--color-nav);
     display: flex;
     gap: 70px;
-    margin: 0;
     padding: 20px 50px;
     align-items: center;
     font-weight: bold;
-    align-self: flex-start;
 }
 
 .bar * {
