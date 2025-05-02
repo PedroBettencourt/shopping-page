@@ -1,0 +1,15 @@
+@import "/home/pedro/repos/shopping-page/src/index.css";
+
+.loadingClass {
+    margin-left: 60px;
+    font-size: 1.5em;
+}
+
+.errorClass {
+    margin-left: 60px;
+    font-size: 1.5em;
+}
+
+.productClass {
+    margin-left: 60px;
+}

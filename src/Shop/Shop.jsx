@@ -1,14 +1,11 @@
 import { Link } from "react-router-dom";
 import { title, loadingClass, errorClass, cards, card, link } from "./Shop.module.css";
-import { useEffect, useState } from "react";
+import { useOutletContext } from "react-router-dom";
 
-function Shop({ items, error, loading }) {
+function Shop() {
 
-    const [food, setFood] = useState(items);
-
-    useEffect(() => {
-        setFood(items);
-    }, [items])
+    const data = useOutletContext();
+    const [food, error, loading] = data.slice(2,);
 
     return(
         <div>

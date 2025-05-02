@@ -1,7 +1,7 @@
 @import "/home/pedro/repos/shopping-page/src/index.css";
 
 
-.bar {
+.barClass {
     position: sticky;
     top: 0;
     background-color: var(--color-nav);
@@ -12,29 +12,29 @@
     font-weight: bold;
 }
 
-.bar * {
+.barClass * {
     text-decoration: none;
 }
 
-.bar *:visited {
+.barClass *:visited {
     color: black;
 }
 
-.title {
+.titleClass {
     font-size: 1.5rem;
     font-weight: bold;
 }
 
-.items {
+.itemsClass {
     display: flex;
     gap: 30px;
 }
 
-.items>*:hover {
+.itemsClass>*:hover {
     text-decoration: underline;
     text-underline-offset: 10px;
 }
 
-.bag {
+.bagClass {
     margin-left: auto;
 }

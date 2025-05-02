@@ -1,12 +1,21 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useOutletContext } from "react-router-dom";
+import { productClass, loadingClass, errorClass } from "./Product.module.css";
 
-function Product({ food, bag, setBag }) {
 
+function Product() {
+
+    const data = useOutletContext();
+    const [bag, setBag, food, loading, error] = data;
 
     // CHECK IF ITEM PARAM ACTUALLY EXISTS _> SEND STATE WITH THE PRODUCTS
 
-    const {product} = useParams();
+    // Get product information
+    let {product} = useParams();
+    product = food.find( item => item.id.toString() === product);
+    const productName = product.name;
+    const productImg = product.img;
+
     const [quantity, setQuantity] = useState(1);
 
     function handleChange(e) {
@@ -30,22 +39,27 @@ function Product({ food, bag, setBag }) {
 
         } else {
             setBag([...bag, {id: product, quantity: quantity}])
-        }
-
-        
+        }       
     }
 
     return (
         <div>
-            <img src="" alt={product} />
-            <h1>{product}</h1>
-            <p>Description...</p>
-            <h2>Price..</h2>
-            <form>
-                <label htmlFor="quantity">Quantity</label>
-                <input type="number" name="quantity" id="quantity" onChange={handleChange} value={quantity} />
-                <button type="submit" onClick={handleSubmit}>Add to Cart</button>
-            </form>
+            {
+                (loading) 
+                ? <div className={loadingClass}>Loading...</div>
+                : (error)
+                ? <div className={errorClass}>{error}</div>
+                : <div className={productClass}>
+                    <h1>{productName}</h1>
+                    <img src={productImg} alt={productName} />
+                    <h2>Price..</h2>
+                    <form>
+                        <label htmlFor="quantity">Quantity</label>
+                        <input type="number" name="quantity" id="quantity" onChange={handleChange} value={quantity} />
+                        <button type="submit" onClick={handleSubmit}>Add to Cart</button>
+                    </form>
+                </div>
+            }
         </div>
     )
 }
