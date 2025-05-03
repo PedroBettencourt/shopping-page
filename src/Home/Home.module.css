@@ -1,4 +1,4 @@
-@import "/home/pedro/repos/shopping-page/src/index.css";
+@import "../index.css";
 
 .content {
     display: flex;
