@@ -7,7 +7,8 @@ import Default from "../Default/Default";
 function Product() {
 
     const data = useOutletContext();
-    const [bag, setBag, food, error, loading, foodIds] = data;
+    let [bag, setBag, food, error, loading, foodIds] = [[], null, [], null, true, []];
+    if (data) [bag, setBag, food, error, loading, foodIds] = data;
     const [quantity, setQuantity] = useState(1);
 
     // Get product information
