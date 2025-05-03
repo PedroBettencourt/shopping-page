@@ -68,7 +68,7 @@ function Navbar() {
                 </Link>
                 
             </nav>
-        <Outlet context={[bag, setBag, food, error, loading]}/>
+        <Outlet context={[bag, setBag, food, error, loading, foodIds]}/>
         </>
     )
 }

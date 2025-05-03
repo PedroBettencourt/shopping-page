@@ -5,6 +5,7 @@ import Shop from "./Shop/Shop";
 import Bag from "./Bag/Bag";
 import "./index.css"
 import Product from "./Product/Product";
+import Default from "./Default/Default";
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
           {path: "/shop", element: <Shop />},
           {path: "/shop/:product", element: <Product />},
           {path: "/bag", element: <Bag />},
+          {path: "*", element: <Default />},
         ]},
     ]);
 

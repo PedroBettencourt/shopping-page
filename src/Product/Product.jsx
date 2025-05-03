@@ -1,17 +1,21 @@
 import { useState } from "react";
 import { useParams, useOutletContext } from "react-router-dom";
 import { productClass, loadingClass, errorClass } from "./Product.module.css";
+import Default from "../Default/Default";
 
 
 function Product() {
 
     const data = useOutletContext();
-    const [bag, setBag, food, error, loading] = data;
-
-    // CHECK IF ITEM PARAM ACTUALLY EXISTS _> SEND STATE WITH THE PRODUCTS
+    const [bag, setBag, food, error, loading, foodIds] = data;
+    const [quantity, setQuantity] = useState(1);
 
     // Get product information
     let {product} = useParams();
+
+    // Check if product is in the foodIds -- send to default page otherwise
+    if (!foodIds.find((item) => product === item.id)) return (<Default />);
+
     product = food.find( item => item.id.toString() === product);
     let productName, productImg, productPrice;
     if (product) {
@@ -20,7 +24,6 @@ function Product() {
         productPrice = product.price;
     }
 
-    const [quantity, setQuantity] = useState(1);
 
     function handleChange(e) {
         const value = e.target.value;
