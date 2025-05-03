@@ -1,6 +1,6 @@
 import { content, title, button, flower, sweet } from "./Home.module.css"
-import folhado from "/home/pedro/repos/shopping-page/public/folhado.png";
-import cupcake from "/home/pedro/repos/shopping-page/public/cupcake.png";
+import folhado from "../assets/folhado.png";
+import cupcake from "../assets/public/cupcake.png";
 import { Link } from "react-router-dom";
 
 function Home() {
