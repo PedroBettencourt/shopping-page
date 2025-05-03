@@ -5,7 +5,8 @@ import { useOutletContext } from "react-router-dom";
 function Shop() {
 
     const data = useOutletContext();
-    const [food, error, loading] = data.slice(2,5);
+    let [food, error, loading] = [[], false, true];
+    if (data) [food, error, loading] = data.slice(2,5);
 
     return(
         <div>

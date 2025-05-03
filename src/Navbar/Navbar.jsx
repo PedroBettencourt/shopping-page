@@ -8,7 +8,7 @@ function Navbar() {
     const [bag, setBag] = useState([]);
 
     // Shop items
-    const [food, setFood] = useState([{id: 5018374285577, name: "", price: ""}]);
+    const [food, setFood] = useState([{id: "", name: "", price: ""}]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
 
