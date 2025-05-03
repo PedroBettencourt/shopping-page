@@ -15,7 +15,16 @@ function Navbar() {
     const foodIds = [{id: "5020364010151", price: "€1.30"}, {id: "5018374285577", price: "€0.80"}, {id: "5010044002552", price: "€1.50"}, 
                      {id: "3228857000166", price: "€1.35"}, {id: "5010044002378", price: "€1.10"}, {id: "7311070032611", price: "€0.95"}, 
                      {id: "3495566827654", price: "€1.70"}, {id: "3760049791006", price: "€1.15"}, {id: "5099077004238", price: "€0.65"}];
+
+
+    let bagSize;
+    if (bag.length !== 0) {
+        bagSize = bag.reduce((acc, next) => (acc + parseInt(next.quantity)), 0);
+    } else {
+        bagSize = 0;
+    }
     
+
     useEffect(() => {
         const fetchData = async() => {
             const items = [];
@@ -54,7 +63,11 @@ function Navbar() {
                     <Link to={"/"}>Home</Link>
                     <Link to={"shop"}>Shop</Link>
                 </div>
-                <Link to={"/bag"} className={bagClass}>Bag</Link>
+                <Link to={"/bag"} className={bagClass}>
+                    Bag
+                    <div>({bagSize})</div>
+                </Link>
+                
             </nav>
         <Outlet context={[bag, setBag, food, error, loading]}/>
         </>

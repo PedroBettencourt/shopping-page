@@ -30,11 +30,14 @@
     gap: 30px;
 }
 
-.itemsClass>*:hover {
-    text-decoration: underline;
-    text-underline-offset: 10px;
-}
-
 .bagClass {
     margin-left: auto;
+    display: flex;
+    gap: 5px;
+}
+
+.itemsClass>*:hover,
+.bagClass:hover{
+    text-decoration: underline;
+    text-underline-offset: 10px;
 }

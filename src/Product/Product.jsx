@@ -31,10 +31,10 @@ function Product() {
     function handleSubmit(e) {
         e.preventDefault();
 
-        const found = bag.find((item) => item.id === product);
+        const found = bag.find((item) => item.product.id === product.id);
         if (found) {
             const newBag = bag.map((item) => {
-                if (item.id === product) {
+                if (item.product.id === product.id) {
                     item.quantity = parseInt(item.quantity) + parseInt(quantity);
                 };
                 return item;
