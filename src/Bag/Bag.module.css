@@ -14,7 +14,7 @@
     border: 1px solid black;
 
     display: grid;
-    grid-template-columns: 250px 1fr;
+    grid-template-columns: 1fr 10fr;
     grid-template-rows: repeat(3, 1fr);
     gap: 30px;
 }
@@ -22,8 +22,8 @@
 .card {
     grid-column: 1/2;
     grid-row: 1/4;
-    width: 250px;
-    height: 300px;
+    max-width: 250px;
+    max-height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,4 +45,16 @@
     font-size: 2em;
     font-weight: bold;
     margin-bottom: 60px;
+}
+
+@media (max-width: 550px) {
+    .itemsClass {
+        margin: 20px;
+    }
+    
+    .contentClass {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }

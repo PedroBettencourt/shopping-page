@@ -64,8 +64,7 @@ function Navbar() {
                     <Link to={"shop"}>Shop</Link>
                 </div>
                 <Link to={"/bag"} className={bagClass}>
-                    Bag
-                    <div>({bagSize})</div>
+                    Bag ({bagSize})
                 </Link>
                 
             </nav>

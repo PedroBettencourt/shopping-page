@@ -32,12 +32,22 @@
 
 .bagClass {
     margin-left: auto;
-    display: flex;
-    gap: 5px;
 }
 
 .itemsClass>*:hover,
 .bagClass:hover{
     text-decoration: underline;
     text-underline-offset: 10px;
+}
+
+@media (max-width: 500px) {
+    .barClass {
+        position: static;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .bagClass {
+        margin: 0;
+    }
 }

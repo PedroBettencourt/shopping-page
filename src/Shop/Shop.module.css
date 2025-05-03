@@ -49,6 +49,18 @@ img {
     font-weight: bold;
 }
 
-form {
+@media (max-width: 500px) {
+    .cards {
+        padding: 10px;
+        align-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
 
+    .card {
+        max-width: 250px;
+    }
+
+    .card > img {
+        max-width: 200px;
+    }
 }

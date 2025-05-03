@@ -14,8 +14,8 @@
     margin: 60px;
     display: grid;
     max-height: 300px;
-    grid-template-columns: 300px 1fr;
-    grid-template-rows: 50px 150px 50px 50px;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: repeat(4, 1fr);
     gap: 30px;
 }
 
@@ -37,6 +37,7 @@ form {
 }
 
 input {
+    height: 1.5em;
     border-radius: 10px;
     border: 1px solid gray;
     padding: 5px 10px;
@@ -60,4 +61,19 @@ button {
 button:hover,
 button:focus {
     background-color: var(--color-3);
+}
+
+@media (max-width: 500px) {
+    .productClass {
+        margin: 10px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    form > * {
+        width: 100px;
+    }
 }
