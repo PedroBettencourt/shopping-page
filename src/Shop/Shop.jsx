@@ -16,7 +16,7 @@ function Shop() {
                 ? <div className={loadingClass}>Loading...</div>
                 : (error)
                 ? <div className={errorClass}>{error}</div>
-                : <ul className={cards}>
+                : (<ul className={cards}>
                     {food.map((item) => 
                         <Link key={item.id} to={item.id} className={card} >
                             <img src={item.img} alt={item.name} />
@@ -24,7 +24,7 @@ function Shop() {
                             <div className={link}>{item.price}</div>
                         </Link>
                     )}
-                </ul>
+                </ul>)
             }
         </div>
     );

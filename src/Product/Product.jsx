@@ -15,7 +15,7 @@ function Product() {
     let {product} = useParams();
 
     // Check if product is in the foodIds -- send to default page otherwise
-    if (!foodIds.find((item) => product === item.id)) return (<Default />);
+    if (!foodIds.find((item) => product === item.id.toString())) return (<Default />);
 
     product = food.find( item => item.id.toString() === product);
     let productName, productImg, productPrice;
